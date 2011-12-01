@@ -8,6 +8,7 @@ dojo.require('toura.models.BackgroundImage');
 dojo.require('toura.models.FeaturedImage');
 dojo.require('toura.models.Video');
 dojo.require('toura.models.Audio');
+dojo.require('toura.models.StaticHtml');
 dojo.require('toura.models.Data');
 dojo.require('toura.models.TextAsset');
 dojo.require('toura.models.GoogleMapPin');
@@ -63,9 +64,10 @@ dojo.declare('toura.models.Node', [], {
       children : store.getValues(item, 'children'),
       bodyText : store.getValue(item, 'bodyText'),
 
-      images : getAssets('images', toura.models.Image),
-      audios : getAssets('audios', toura.models.Audio),
-      videos : getAssets('videos', toura.models.Video),
+      images     : getAssets('images', toura.models.Image),
+      audios     : getAssets('audios', toura.models.Audio),
+      videos     : getAssets('videos', toura.models.Video),
+      staticHtml : getAssets('staticHtml', toura.models.StaticHtml),
 
       data : getAssets('dataAssets', toura.models.Data),
 
