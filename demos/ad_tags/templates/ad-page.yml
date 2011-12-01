@@ -1,0 +1,17 @@
+ad-page:
+  screens:
+    - name: index
+      regions:
+        # each region can either be a row or a column
+        - type: row
+          # by default, regions will all equally fill the space of their
+          # container. `size: fixed` will cause it to take the size of its
+          # contents
+          size: fixed
+          components:
+            - PageNav
+        - type: row
+          # by default `scrollable` is false
+          scrollable: true
+          components:
+            - custom.AdTag
