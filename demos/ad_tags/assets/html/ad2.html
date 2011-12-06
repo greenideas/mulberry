@@ -1,0 +1,65 @@
+<html>
+  <head>
+<!--passthru-->
+
+<!--Begin OAS MJX setup tag-->
+<script language="JavaScript"><!--
+//configuration
+
+OAS_sitepage = 'www.test.com/toura/toura_300x50_banner';
+OAS_listpos = 'TOP';
+OAS_query='';
+OAS_url='http://rmedia.boston.com/RealMedia/ads/';
+OAS_target='_top';
+OAS_version=10;
+OAS_rn='001234567890';
+OAS_rns='1234567890';
+OAS_rn=new String(Math.random());
+OAS_rns=OAS_rn.substring(2, 11);
+
+function OAS_NORMAL(pos){
+  document.writeln('<A HREF="'+OAS_url+'click_nx.ads/'+OAS_sitepage+'/1'+OAS_rns+'@'+OAS_listpos+'!'+ pos+'?'+OAS_query+'" TARGET='+OAS_target+'>');
+  document.writeln('<IMG SRC="'+OAS_url+'adstream_nx.ads/'+OAS_sitepage+'/1'+OAS_rns+'@'+OAS_listpos+'!'+pos+'?'+OAS_query+'"BORDER=0></A>');}
+//-->
+</script>
+
+<script language="JavaScript1.1">
+<!--
+
+OAS_version=11;
+
+if((navigator.userAgent.indexOf('Mozilla/3')!=-1)||navigator.userAgent.indexOf('Mozilla/4.0WebTV')!=-1){
+  OAS_version=10;
+}
+
+if (OAS_version >=11) 
+  document.writeln('<SCR'+'IPT LANGUAGE=JavaScript1.1 SRC="'+OAS_url+'adstream_mjx.ads/'+OAS_sitepage+'/1'+OAS_rns+'@'+OAS_listpos+'?'+OAS_query+'"><\/SCRIPT>');
+
+//-->
+</script>
+  
+<script language="JavaScript"><!--
+
+document.writeln('');
+
+function OAS_AD(pos){
+  if (OAS_version >= 11) 
+    OAS_RICH(pos);
+  else 
+    OAS_NORMAL(pos);
+}
+//-->
+</script><!--End OAS MJX setup tag-->
+<style type="text/css">
+  div, html, body, img, a {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+  <div id="top" class="adContainer">
+    <script language="JavaScript">OAS_AD('TOP');</script>
+  </div>
+</body>
+</html>
