@@ -1,5 +1,14 @@
 <html>
   <head>
+  <script type="text/javascript">
+    var touch = parent.toura.app.UI.hasTouch,
+        evt = touch ? 'touchstart' : 'click';
+    
+    document.addEventListener(evt, function(e){
+      parent.dojo.publish("adClick", [document]);
+      e.preventDefault();
+    });
+  </script>
 <!--passthru-->
 
 <!--Begin OAS MJX setup tag-->
