@@ -53,5 +53,7 @@
 		<key>ChildBrowserCommand</key>
 		<string>ChildBrowserCommand</string>
 	</dict>
+	<key>OpenAllWhitelistURLsInWebView</key>
+	<true/>
 </dict>
 </plist>
