@@ -7,6 +7,12 @@ mulberry.component('AdTag', {
   },
 
   setupConnections : function() {
+    console.log("WINDOW LOCATION" + window.location);
+
+    this.connect(this.adTag, "click", function(){ toura.log("foo"); });
+
+    this.connect(window, "message", function(){ toura.log("foo"); });
+
     this.subscribe("adClick", function(doc){ 
       toura.log(doc);
     });

@@ -1,14 +1,6 @@
+<!DOCTYPE html>
 <html>
   <head>
-  <script type="text/javascript">
-    var touch = parent.toura.app.UI.hasTouch,
-        evt = touch ? 'touchstart' : 'click';
-    
-    document.addEventListener(evt, function(e){
-      parent.dojo.publish("adClick", [document]);
-      e.preventDefault();
-    });
-  </script>
 <!--passthru-->
 
 <!--Begin OAS MJX setup tag-->
@@ -70,5 +62,11 @@ function OAS_AD(pos){
   <div id="top" class="adContainer">
     <script language="JavaScript">OAS_AD('TOP');</script>
   </div>
+
+  <script type="text/javascript">
+    document.addEventListener("click", function(e){
+      parent.postMessage("foo","http://localhost");
+    });
+  </script>
 </body>
 </html>
