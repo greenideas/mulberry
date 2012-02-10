@@ -1,6 +1,6 @@
-dojo.provide('toura.AppConfig');
-
 mulberry = window.mulberry || {};
+toura = window.toura || {};
+
 mulberry._Config = {{{base_config}}};
 
 // force all images to come from S3. this
@@ -12,15 +12,19 @@ mulberry.forceStreaming = {{force_streaming}};
 // useful for speeding up non-data dev.
 mulberry.skipVersionCheck = {{skip_version_check}};
 
-mulberry.features = {
-  multiLineChildNodes : false,
+toura.features = {
+  siblingNav : {{sibling_nav}},
+  ads : {{ads}},
+
   sharing : true,
   favorites : true,
   fontSize : true,
-  siblingNav : {{sibling_nav}},
-  debugToolbar : {{debug}},
-  ads : {{ads}},
+  multiLineChildNodes : false,
   debugPage : true
+};
+
+mulberry.features = {
+  debugToolbar : {{debug}}
 };
 
 {{postscript}}
