@@ -50,6 +50,7 @@ public class TouraMainActivity extends DroidGap {
     WebSettings ws = super.appView.getSettings();
     ws.setSupportZoom(false);
     ws.setBuiltInZoomControls(false);
+    ws.setPluginState(PluginState.ON);
     IntentReceiver.setTouraMainActivity(this);
   }
 
