@@ -90,9 +90,9 @@ dojo.declare('toura.models.Feed', null, {
    */
   getItem : function(itemIndex) {
     this._get();
-    var item = this.items[itemIndex];
+    var item = this.entries[itemIndex];
     if (item) {
-      item.siblings = this.items;
+      item.siblings = this.entries;
     }
     return item;
   },
@@ -101,14 +101,14 @@ dojo.declare('toura.models.Feed', null, {
     this.lastChecked = new Date().getTime();
 
     if (data && data.items) {
-      this.items = dojo.map(data.items, function(item, index) {
+      this.entries = dojo.map(data.items, function(item, index) {
         item.index = index;
         return new toura.models.FeedItem(item, this);
       }, this);
 
     } else {
       console.warn('There were no results for feed', this.id, data);
-      this.items = [];
+      this.entries = [];
     }
 
     this._store();
@@ -122,12 +122,14 @@ dojo.declare('toura.models.Feed', null, {
   },
 
   _store : function() {
-    mulberry.app.DeviceStorage.set(this.id, this.items);
+    mulberry.app.DeviceStorage.set(this.id, this.entries);
     mulberry.app.DeviceStorage.set(this.id + '-checked', this.lastChecked);
   },
 
   _get : function() {
-    this.items = dojo.map(
+    console.log("ID");
+    console.log(this.id);
+    this.entries = dojo.map(
       mulberry.app.DeviceStorage.get(this.id) || [],
       function(item) {
         item.pubDate = new Date(item.pubDate);
@@ -135,7 +137,8 @@ dojo.declare('toura.models.Feed', null, {
       }
     );
 
-    return this.items;
+    console.log(this.entries);
+    return this.entries;
   },
 
   _createFeedUrl : function(url){
