@@ -145,7 +145,7 @@ describe("feed item detail component", function() {
     });
   });
 
-  xit("should turn image tags into background images", function(){
+  it("should turn image tags into background images", function(){
     c = C({ node : feedItem });
     expect(t.querySelector('mulberry-feed-item-image')).toBeFalsy();
     expect(t.querySelectorAll('[style]').length).toBeGreaterThan(1);
