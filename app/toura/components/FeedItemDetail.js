@@ -33,6 +33,8 @@ dojo.declare('toura.components.FeedItemDetail', mulberry._Component, {
   },
 
   prepareData : function() {
+    console.log("Look at a.content.innerHTML. I don't get how it's already replaced the img tags with BackgroundImage components");
+    console.log(this);
     this.item = this.node;
   },
 
