@@ -33,8 +33,6 @@ dojo.declare('toura.components.FeedItemDetail', mulberry._Component, {
   },
 
   prepareData : function() {
-    console.log("Look at a.content.innerHTML. I don't get how it's already replaced the img tags with BackgroundImage components");
-    console.log(this);
     this.item = this.node;
   },
 
@@ -83,16 +81,14 @@ dojo.declare('toura.components.FeedItemDetail', mulberry._Component, {
   },
 
   _prepareImages : function() {
-    dojo.forEach(this.domNode.querySelectorAll('img'), function(image){
-      var bgImg  = this.adopt(mulberry.ui.BackgroundImage, image);
+    dojo.forEach(this.domNode.querySelectorAll('.mulberry-feed-item-image'), function(imageNode){
+      var bgImg  = this.adopt(mulberry.ui.BackgroundImage, imageNode);
 
-      dojo.connect(image, "onload", function(){
-        bgImg.imageUrl = image.src;
-        bgImg.height = image.height;
-        bgImg.loadImage();
+      bgImg.imageUrl = imageNode.getAttribute('data-background-src');
+      bgImg.height = imageNode.getAttribute('data-image-height');
+      bgImg.loadImage();
 
-        dojo.place(bgImg.domNode, image, "replace");
-      });
+      dojo.place(bgImg.domNode, imageNode, "replace");
     }, this);
   },
 
