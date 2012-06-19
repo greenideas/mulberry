@@ -25,7 +25,7 @@ dojo.declare('toura.components.MoreDrawer', mulberry._Component, {
   isHidden : true,
 
   prepareData : function() {
-    this.sharingDisabled = !toura.features.sharing;
+    this.sharingDisabled = mulberry.Device.os === "browser" ? true : !toura.features.sharing;
     this.favoritesDisabled = !toura.features.favorites;
     this.fontSizeDisabled = !toura.features.fontSize;
 
